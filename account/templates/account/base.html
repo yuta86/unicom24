@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Unicom24{% endblock %}
+{% block sidebar %}
+    {% url 'account_orders' as orders_url %}
+    {% url 'account_account' as account_url %}
+
+    <div class="text-center">
+        <img class="img-circle" src="{{ MEDIA_URL }}{{ request.user.profile.photo }}" width="70" height="70">
+
+        {#        <img class="img-circle" src="#}
+        {#            {% if photo %}{{ photo.url }}#}
+        {#                {% else %}{% static "img/no_image.png" %}#}
+        {#            {% endif %}"#}
+        {#        width="200" height="250" alt="Невозможно найти изображение">#}
+        <br/>
+        <br/>
+        <h4>Приветствую, {{ request.user.get_full_name }}</h4>
+        <br/>
+        <h4>Группа: {{ request.user.profile.group }}</h4>
+
+    </div>
+
+    <div class="list-group">
+        <span class="text-uppercase">Панель</span>
+        <a href="{% url 'account_orders' %}"
+           class="list-group-item {% if request.path == orders_url %} active {% endif %}">Заявки</a>
+
+        <span class="text-uppercase">Профиль</span>
+        <a href="{% url 'account_account' %}"
+           class="list-group-item {% if request.path == account_url %} active {% endif %}">Профиль</a>
+    </div>
+
+    <div class="text-center">
+        <a href="{% url 'account_sign_out' %}?next={{ request.path }}" class="btn btn-red">Выход</a>
+    </div>
+
+{% endblock %}

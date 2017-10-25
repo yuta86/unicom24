@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+
+### PyCharm ###
+.idea/
+*.sqlite3
+unicom24_env/

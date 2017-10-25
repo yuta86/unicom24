@@ -1,0 +1,40 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    {#  мои стили  #}
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}">
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+
+  {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+              <li class="{{ message.tags }}">
+                  {{ message|safe }}
+                  <a href="#" class="close">✖</a>
+              </li>
+          {% endfor %}
+      </ul>
+
+  {% endif %}
+
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 col-sm-2 sidebar">
+            {% block sidebar %}{% endblock %}
+        </div>
+    </div>
+        <div class="col-lg-10 col-lg-offset-2 col-md-10  col-md-offset-2 col-sm-10 col-sm-offset-2 content">
+            {% block content %}{% endblock %}
+        </div>
+  </div>
+</body>
+</html>

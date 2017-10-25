@@ -1,0 +1,163 @@
+body {
+    padding-top: 50px;
+    background-color: #EDF2F5;
+    overflow: auto;
+}
+
+.bg-ruby {
+    background-color: #7B2324;
+}
+
+.bg-red {
+    background-color: #E31E25;
+}
+
+.text-white {
+    color: white;
+}
+
+.btn-red {
+    color: white;
+    background-color: #E31E25;
+}
+
+.btn-red:hover,
+.btn-red:focus {
+    color: white;
+    background-color: #EC4D57;
+}
+
+/* SIDE BAR */
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    background-color: #7B2324;
+    overflow: auto;
+}
+
+/* SIDE BAR - HEADER */
+.sidebar > div:first-child {
+    padding: 30px 10px;
+    font-weight: bold;
+    font-size: 15px;
+    background-color: #3F1E1E;
+}
+
+.sidebar > div:first-child > h4 {
+    color: #e0deeb;
+}
+
+.sidebar > div:first-child > h5 {
+    color: #ffffff;
+}
+
+/* SIDE BAR - LIST */
+.sidebar .list-group {
+    padding: 0;
+    background-color: #7B2324;
+}
+
+.sidebar .list-group > span {
+    color: #ffffff;
+    display: block;
+    margin-top: 20px;
+    padding: 20px 30px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.sidebar .list-group .list-group-item,
+.sidebar .list-group .list-group-item:focus {
+    background-color: #7B2324;
+    color: #ffffff;
+    border: 0;
+    padding-left: 60px;
+    padding-right: 30px;
+}
+
+.sidebar .list-group .list-group-item.active,
+.sidebar .list-group .list-group-item:hover {
+    background-color: #3F1E1E;
+    color: #e0deeb;
+}
+
+.sidebar .list-group .list-group-item:first-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.sidebar .list-group .list-group-item .badge,
+.sidebar .list-group .list-group-item.active .badge {
+    background-color: #E31E25;
+    color: #e0deeb;
+}
+
+/* SIDE BAR - LOGOUT */
+.sidebar > div:last-child {
+    padding: 30px;
+}
+
+.sidebar > div:last-child .btn {
+    width: 100%;
+}
+
+/* CONTENT */
+.content {
+    padding: 0 40px;
+}
+
+.content .panel {
+    border: none;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td {
+    vertical-align: middle;
+}
+
+.table,
+.table > thead > tr > th {
+    border-color: #E31E25;
+}
+
+
+/* messages */
+ul.messages {
+    margin:10px 300px;
+    padding: 0;
+    list-style-type:
+    none;
+}
+ul.messages li.success,
+ul.messages li.warning,
+ul.messages li.error,
+ul.messages li.info {
+    margin:0;
+    padding:14px 20px;
+    list-style:none;
+    color:#fff;
+}
+
+ul.messages li.success { background:#81ce81; }
+ul.messages li.success a { color:#0ac33e; }
+
+ul.messages li.error { background:#a30029; color:#e9828e; }
+ul.messages li.error a { color:#e9828e; }
+
+ul.messages li.info { background:#faffae; color:#696b4e; }
+ul.messages li.info a { color:#1586de; }
+
+ul.messages li.warning { background:#de9404; }
+ul.messages li.warning a { color:#f49000; }
+
+ul.messages li a.close {
+    margin:0;
+    float:right;
+    opacity:1;
+    border:0;
+    box-shadow:none;
+    text-shadow:none;
+}

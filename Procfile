@@ -1,0 +1,1 @@
+web: gunicorn unicom24project.wsgi --log-file -

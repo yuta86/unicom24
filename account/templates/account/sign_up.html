@@ -1,0 +1,18 @@
+{% extends 'base_signup.html' %}
+{% load bootstrap3 %}
+{% block title %}Регистрация{% endblock %}
+
+{% block heading %}Страница регистрации{% endblock %}
+{% block content %}
+{#    <h2>Создание пользователя.</h2>#}
+    <p>Пожалуйста, зарегистрируйтесь, используя следующую форму:</p>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h3>Логин</h3>
+        {% bootstrap_form user_form %}
+        <h3>Профиль</h3>
+        {% bootstrap_form profile_form %}
+        <button type="submit" class="btn-red pull-right">Зарегистрировать</button>
+    </form>
+    <a href="{% url 'account_sign_in' %}">У Вас есть учётная запись?</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base_signup.html' %}
+{% load bootstrap3 %}
+{% block title %}Войти{% endblock %}
+
+{% block heading %}Страница входа{% endblock %}
+
+{% block content %}
+    <h2>Вход</h2>
+    <p>Пожалуйста, используйте следующую форму, чтобы войти:</p>
+    <form method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn-red pull-right">Войти</button>
+    </form>
+<a href="{%  url 'account_sign_up'%}">Создать учётную запись</a>
+
+{% endblock %}
+
+
+

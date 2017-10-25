@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Редактировать свой аккаунт{% endblock %}
+
+{% block content %}
+    <h1>Редактировать свой аккаунт</h1>
+    <p>Вы можете изменить свою учетную запись, используя следующую форму:</p>
+    <form action="." method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <img src="{% if photo %}{{ photo.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" width="200" height="250" alt="Невозможно найти изображение">
+        {{ user_form.as_p }}
+        {#        Метод as_p() представляет форму в виде последовательности тегов <p>, по одному на каждое поле:#}
+        {{ profile_form.as_p }}
+        <p><input type="submit" value="Сохранить изменения"></p>
+    </form>
+{% endblock %}
