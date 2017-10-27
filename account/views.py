@@ -48,7 +48,8 @@ def account_account(request):
 
 @login_required(login_url='/account/sign-in/')
 def account_orders(request):
-    orders = Request.objects.filter(profile=request.user.profile).order_by("-id")
+    orders = Request.objects.filter(profile=request.user.profile)
+        # .order_by("-id")
     return render(request, 'account/orders.html', {
         'orders': orders
     })

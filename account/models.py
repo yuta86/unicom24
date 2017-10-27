@@ -43,7 +43,7 @@ class Profile(models.Model):
     # Дата рождения
     date_of_birth = models.DateField(blank=True, null=True, default='2010-01-01', verbose_name='Дата рождения')
     # Населённый пункт
-    city = models.CharField(max_length=30, blank=True, default='Москва', verbose_name="Населённый пункт")
+    city = models.CharField(max_length=40, blank=True, default='Москва', verbose_name="Населённый пункт")
     # Фото (Аватар)
     photo = models.ImageField(upload_to='users/', blank=False, verbose_name="Фото")
 
@@ -77,8 +77,8 @@ class Profile(models.Model):
 
 
 class Partner(models.Model):  # кредитная организация
-    name = models.CharField(max_length=200, db_index=True, unique=True, verbose_name="Название партнёра")
-    slug = models.CharField(max_length=200, db_index=True, unique=True)
+    name = models.CharField(max_length=250, db_index=True, unique=True, verbose_name="Название партнёра")
+    slug = models.CharField(max_length=250, db_index=True, unique=True)
     # Иконка партнёра.
     # 'offers/partner/%s' % (name)
     image = models.ImageField(upload_to='offers/partner/', blank=True, verbose_name="Изображение")
@@ -94,9 +94,9 @@ class Partner(models.Model):  # кредитная организация
 
 class Offer(models.Model):
     # Название предложения.
-    name = models.CharField(max_length=200, db_index=True, verbose_name="Название предложения")
+    name = models.CharField(max_length=250, db_index=True, verbose_name="Название предложения")
     # Алиас предложения(его URL).
-    slug = models.SlugField(max_length=200, db_index=True)
+    slug = models.SlugField(max_length=250, db_index=True)
     # Партнёр
     partner = models.ForeignKey(Partner, related_name='partner', on_delete=models.CASCADE, verbose_name="Партнёр")
     # related_name - задаёт имя модели для обратной связи  от связной модели. Если не хотите создавать обратную связь, то
@@ -150,7 +150,7 @@ class Request(models.Model):
     created = models.DateTimeField(auto_now_add=True, verbose_name="Создан")
     # Дата обновления
     # В этом поле хранится время последнего обновления объекта
-    updated = models.DateTimeField(auto_now=True, verbose_name="Обновлён")
+    updated = models.DateTimeField(auto_now=True, verbose_name="Обновлeн")
     # Типы запросов
     type_status_choices = (
         ('Новый', 'Новый'),
