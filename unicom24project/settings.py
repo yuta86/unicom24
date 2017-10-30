@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'unicom24',
         'USER': 'postgres',
         'PASSWORD': 'postgresql',
-        'HOST': 'localhost',
+        'HOST': '',
         'PORT': '',
     }
 }
