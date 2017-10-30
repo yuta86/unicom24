@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'unicom24project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'unicom24',
-        'USER': 'postgres',
-        'PASSWORD': 'postgresql',
-        'HOST': '',
-        'PORT': '',
+        'NAME': 'dd738nl06ba0mj',
+        'USER': 'zxjukrucquxfyo',
+        'PASSWORD': '99c018fc8c94d25be7d4a16975d6a84e5f50eb92729cd4c35e8f480e8b6a5039',
+        'HOST': 'ec2-174-129-239-0.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
