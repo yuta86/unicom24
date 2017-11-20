@@ -136,9 +136,9 @@ class Offer(models.Model):
     def __str__(self):
         return self.name
 
-    def get_absolute_url(self):  # Конвенция для получения URL-адреса данного объекта
-        return reverse('shop:product_detail',
-                       args=[self.id, self.slug])
+    # def get_absolute_url(self):  # Конвенция для получения URL-адреса данного объекта
+    #     return reverse('shop:product_detail',
+    #                    args=[self.id, self.slug])
 
 
 class Request(models.Model):
