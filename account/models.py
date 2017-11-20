@@ -48,7 +48,7 @@ class Profile(models.Model):
     photo = models.ImageField(upload_to='users/', blank=False, verbose_name="Фото")
 
     # Номер телефона (Мобильный)
-    phone = models.CharField(max_length=12, verbose_name="Телефон")  # +7 XXX XXX XXXX
+    phone = models.CharField(max_length=12, verbose_name="Телефон", help_text="+7 XXX XXX XXXX")  # +7 XXX XXX XXXX
     # Серия номер паспорта 1234 123456
     passport = models.CharField(max_length=10, verbose_name="Паспорт")
     # Скоринговый балл
