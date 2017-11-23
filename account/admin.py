@@ -55,7 +55,7 @@ class PartnerAdmin(admin.ModelAdmin):
     search_fields = ['name']  # поиск по столбцам
     list_editable = ['slug', 'image']  # поля для редактирования в Админке
     # prepopulated_fields, чтобы указать поля, в которых значение автоматически задается с использованием значения других полей
-
+    # list_per_page = 2  # пагинация на странице
 
 admin.site.register(Partner, PartnerAdmin)
 
