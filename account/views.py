@@ -10,7 +10,13 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
 
+
+import logging
+logger  = logging.getLogger()
+
+
 def home(request):
+    logger.info("====SOME TEXT===")
     return redirect(account_home)
 
 
