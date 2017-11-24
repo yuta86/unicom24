@@ -59,49 +59,42 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
 )
-#logger.debug()
-#logger.info()
-#logger.warning()
-#logger.error()
-#logger.critical()
+# logger.debug()
+# logger.info()
+# logger.warning()
+# logger.error()
+# logger.critical()
 
-LOGGING = {
-              'version': 1,
-              'disable_existing_loggers': False,
-              'loggers':
-                  {
-                      'name1': {
-                          'handlers': ['console', 'file'],
-                          'level': 'DEBUG',
-                      },
-                      'name2': {
-                          'handlers': ['console', 'file2'],
-                          'level': 'DEBUG',
-                      }
-                  },
-              'handlers':
-              {
-                      'console': {
-                          'level': 'INFO',
-                          'class': 'logging.StreamHandler',
-                      },
-                      'file': {
-                          'level': 'ERROR',
-                          'class': 'logging.FileHandler',
-                          'filename': os.path.join(BASE_DIR, 'debug.log'),
-                          'formatter': 'verbose',
-                      },
-                      'file2': {
-                          'level': 'ERROR',
-                          'class': 'logging.FileHandler',
-                          'filename': os.path.join(BASE_DIR, 'debug_unicom24.log'),
-                          'formatter': 'simple',
-                      },
-              },
-              'formatters': {
-              },
-          },
-
+# LOGGING = {
+#               'version': 1,
+#               'disable_existing_loggers': False,
+#               'loggers': {
+#                   'account': {
+#                       'handlers': ['console', 'file'],
+#                       'level': 'DEBUG',
+#                   },
+#                   'other': {
+#                       'handlers': ['console', 'file2'],
+#                       'level': 'DEBUG',
+#                   }
+#               },
+#               'handlers': {
+#                   'console': {
+#                       'level': 'INFO',
+#                       'class': 'logging.StreamHandler',
+#                   },
+#                   'file': {
+#                       'level': 'ERROR',
+#                       'class': 'logging.FileHandler',
+#                       'filename': os.path.join(BASE_DIR, 'debug.log'),
+#                   },
+#                   'file2': {
+#                       'level': 'ERROR',
+#                       'class': 'logging.FileHandler',
+#                       'filename': os.path.join(BASE_DIR, 'debug_unicom24.log'),
+#                   },
+#               },
+#           },
 
 # REST_FRAMEWORK = {
 #     # Use Django's standard `django.contrib.auth` permissions,
@@ -114,7 +107,7 @@ LOGGING = {
 # }
 
 REST_FRAMEWORK = {
-'DEFAULT_PERMISSION_CLASSES': [
-    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-]
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
 }

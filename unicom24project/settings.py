@@ -26,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['myunicom24.herokuapp.com', 'localhost', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -140,6 +139,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Update database configuration with $DATABASE_URL.
 import dj_database_url
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
@@ -179,7 +179,10 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
 }
+print('-----------------------------begin')
+
 try:
-    from local_settings import *
+    from .local_settings import *
 except ImportError:
     print("WARNING! local_settings are not define!!!")
+print('-----------------------------end')

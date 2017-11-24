@@ -9,10 +9,9 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 
-
-
 import logging
-logger  = logging.getLogger()
+
+logger = logging.getLogger(__name__)  # account
 
 
 def home(request):
@@ -55,7 +54,7 @@ def account_account(request):
 @login_required(login_url='/account/sign-in/')
 def account_orders(request):
     orders = Request.objects.filter(profile=request.user.profile)
-        # .order_by("-id")
+    # .order_by("-id")
     return render(request, 'account/orders.html', {
         'orders': orders
     })
@@ -171,4 +170,3 @@ class PartnerDatailView(generics.RetrieveAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = Partner.objects.all()
     serializer_class = PartnerSerializer
-
